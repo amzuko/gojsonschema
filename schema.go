@@ -27,7 +27,6 @@
 package gojsonschema
 
 import (
-	//	"encoding/json"
 	"errors"
 	"reflect"
 	"regexp"
@@ -108,8 +107,6 @@ func PartialSchemaFromSchema(l JSONLoader, s *Schema) (*Schema, error) {
 	d.referencePool = s.referencePool
 
 	d.rootSchema = &subSchema{property: STRING_ROOT_SCHEMA_PROPERTY}
-	// d.rootSchema.definitions = s.rootSchema.definitions
-	d.rootSchema = s.rootSchema
 
 	d.documentReference, err = gojsonreference.NewJsonReference("#")
 	if s.pool.GetStandaloneDocument() == nil {
